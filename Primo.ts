@@ -93,3 +93,85 @@ var interni = anagrafica.filter(
 )
 
 console.log(interni);
+
+var datimappati = anagrafica.map(
+    (personaletta: people) => {
+        return {
+            cittaNascita: personaletta.citta,
+            tipoPersona: personaletta.anni > 17 ? "Maggiorenne" : "Minorenne"
+        }
+    }
+)
+
+console.log(datimappati);
+
+console.log("Inizio gestione O.O.P.");
+
+
+
+class appartamento {
+    public mq: number = 0
+    citta: string = "";
+    indirizzo: string = "";
+
+
+    constructor(
+        _mq: number, citta: string, indirizzo: string
+    ) {
+        this.mq = _mq;
+        this.citta = citta;
+        this.indirizzo = indirizzo;
+    }
+
+    dettagli(): string {
+        return this.citta + "-" + this.indirizzo + "-" + this.mq
+    }
+
+    prova(): void {
+        alert("Ciao");
+    }
+
+}
+
+var magliana = new appartamento(110, "Roma", "Via della Magliana, 65");
+
+/*
+magliana.citta = "Roma"
+magliana.indirizzo = "Via della magliana, 65"
+magliana.mq = 110;
+*/
+
+console.log(magliana.citta);
+
+console.log(magliana.dettagli());
+
+
+class villa extends appartamento {
+    private tipologiaTrattativa: string = "Pubblica";
+
+    constructor(_mq: number, citta: string, indirizzo: string, tipologia: string) {
+        super(_mq, citta, indirizzo)
+        this.tipologiaTrattativa = tipologia
+    }
+
+
+
+    getTipologia(): string {
+        return this.tipologiaTrattativa;
+    }
+
+    setTipologia(tipo: string): void {
+        this.tipologiaTrattativa = tipo
+    }
+
+    dettagli(): string {
+        return super.dettagli() + "-" + this.tipologiaTrattativa
+    }
+
+}
+
+
+var eur = new villa(150, "Roma", "Viale Africa", "Privata");
+
+
+console.log(eur.dettagli())
