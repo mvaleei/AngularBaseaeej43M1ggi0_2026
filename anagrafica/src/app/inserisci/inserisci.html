@@ -4,24 +4,24 @@
         <tr>
             <td><label for="">Nominativo</label></td>
             <td>
-                <input type="text">
+                <input type="text" [(ngModel)]="nominativo">
             </td>
         </tr>
         <tr>
             <td><label for="">Anno di nascita</label></td>
             <td>
-                <input type="number">
+                <input type="number" [(ngModel)]="annoNascita">
             </td>
         </tr>
         <tr>
             <td><label for="">Interno</label></td>
             <td>
-                <input type="text">
+                <input type="text" [(ngModel)]="interno">
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <button>Conferma inserimento</button>
+                <button (click)="inviaNuovo()">Conferma inserimento</button>
             </td>
         </tr>
     </table>

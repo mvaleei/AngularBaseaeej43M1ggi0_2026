@@ -35,5 +35,10 @@ export class Listato {
     }
   ]
 
+  ricezioneNuovo(nuovaPersona: Persona): void {
+    nuovaPersona.id = this.peoples.length + 1
+    this.peoples.push(nuovaPersona);
+  }
+
 
 }

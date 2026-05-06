@@ -3,7 +3,7 @@
     <h3>Numero di persone presenti in anagrafica: {{peoples.length}}</h3>
     <br>
 
-    <app-inserisci></app-inserisci>
+    <app-inserisci (eventoInvio)="ricezioneNuovo($event)"></app-inserisci>
 
     <br><br>
 
