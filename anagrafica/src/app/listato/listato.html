@@ -1,0 +1,21 @@
+<div style="background-color: chartreuse; width: 90%;">
+    <h2>Componente per la gestione dell'anagrafica aziendale</h2>
+    <h3>Numero di persone presenti in anagrafica: {{peoples.length}}</h3>
+    <br>
+
+    <app-inserisci></app-inserisci>
+
+    <br><br>
+
+    @for (people of peoples; track people.id) {
+    <div>id:{{people.id}} <button>Visualizza anagrafica</button> - nome:{{people.nominativo}} - anno
+        nascita:{{people.annoNascita}} -
+        interno:{{people.interno}}</div>
+    }
+    <br>
+    @for (people of peoples; track $index) {
+    <app-dettaglio [people]="people"></app-dettaglio>
+    }
+
+
+</div>

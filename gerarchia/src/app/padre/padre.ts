@@ -14,4 +14,16 @@ export class Padre {
 
   cittaNascita: string = "Natale";
 
+  nomeRicevuto: string = "Nome del padre di default";
+
+  riceviDalFiglio(nomeDelFiglio: string): void {
+    this.nomeRicevuto = nomeDelFiglio;
+  }
+
+  anniRicevuti: number = 0
+
+  riceviAnni(anniricevutiDalFiglio: number): void {
+    this.anniRicevuti = anniricevutiDalFiglio;
+  }
+
 }

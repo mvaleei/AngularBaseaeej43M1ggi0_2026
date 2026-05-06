@@ -1,9 +1,13 @@
 <div style="background-color: bisque; width: 85%;">
-    <h1>Sono il componente padre che invia informazioni al figlio</h1>
+    <h1>Sono il componente padre che invia e riceve informazioni al/dal figlio</h1>
 
     <label for="">Digita la tua città di nascita</label>
     <input type="text" [(ngModel)]="cittaNascita"> <span>{{cittaNascita}}</span>
 
-    <app-figlio [cittaRicevuta]="cittaNascita" [anniRicevuti]="10"></app-figlio>
+    <app-figlio (eventoAnni)="riceviAnni($event)" (eventoFiglio)="riceviDalFiglio($event)"
+        [cittaRicevuta]="cittaNascita" [anniRicevuti]="10"></app-figlio>
+    <br>
+    <div>dal componente figlio ho ricevuto il seguente nome: {{nomeRicevuto}}</div>
+    <div>Dal componente figlio ho ricevuto i seguenti anni: {{anniRicevuti}}</div>
 
 </div>

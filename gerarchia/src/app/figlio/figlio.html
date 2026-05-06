@@ -1,6 +1,18 @@
 <div style="background-color:chocolate; width: 85%;">
-    <h1>Sono il componente figlio che riceve informazioni dal padre</h1>
+    <h1>Sono il componente figlio che riceve e invia informazioni dal/al padre</h1>
     <div>Dal componente padre ho ricevuto la città di nascita di: {{cittaRicevuta}}</div>
     <div>Anni ricevuti: {{anniRicevuti}}</div>
     <br>
+    <label for="">Digita il tuo nome</label>
+    <input type="text" [(ngModel)]="nomeInserito"> <span>{{nomeInserito}}</span>
+    <button (click)="inviaAlPadre()">Invia informazione (nomeInserito) al padre</button>
+
+    <br>
+
+    <label for="">Digita i tuoi anni</label>
+    <input type="number" [(ngModel)]="anniDigitati"> <span>{{anniDigitati}}</span>
+    <button (click)="inviaAnniAlpadre()">Invia gli anni al padre</button>
+    <br>
+    <button (click)="inviaTuttoAlPadre()">Invia tutti i dati al padre</button>
+
 </div>

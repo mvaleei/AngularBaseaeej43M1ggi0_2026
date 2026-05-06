@@ -1,0 +1,13 @@
+<div>id:{{people.id}}
+    <button (click)="scegli()">{{visualizza ===true ?'Nascondi':'Visualizza'}} anagrafica</button>
+
+    @if (visualizza===true) {
+    <span>
+        - nome:{{people.nominativo}} - anno
+        nascita:{{people.annoNascita}} -
+        interno:{{people.interno}}
+    </span>
+    }
+
+
+</div>
