@@ -1,0 +1,9 @@
+<div style="background-color: bisque; width: 85%;">
+    <h1>Sono il componente padre che invia informazioni al figlio</h1>
+
+    <label for="">Digita la tua città di nascita</label>
+    <input type="text" [(ngModel)]="cittaNascita"> <span>{{cittaNascita}}</span>
+
+    <app-figlio [cittaRicevuta]="cittaNascita" [anniRicevuti]="10"></app-figlio>
+
+</div>

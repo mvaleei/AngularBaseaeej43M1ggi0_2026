@@ -1,0 +1,41 @@
+<table border="1">
+  <tr>
+    <td><label for="">Inserire base</label></td>
+    <td>
+      <input type="number" [(ngModel)]="Base"> <span>{{Base}}</span>
+    </td>
+  </tr>
+  <tr>
+    <td><label for="">Inserire altezza</label></td>
+    <td>
+      <input type="number" [(ngModel)]="Altezza"> <span>{{Altezza}}</span>
+    </td>
+  </tr>
+  <tr>
+    <td><label for="">Selezionare figura</label></td>
+    <td>
+      <select [(ngModel)]="figuraDivisore" (change)="calcolare()">
+        <option value="1:''">Selezionare dalla lista</option>
+        <option value="1:'Rettangolo'">Rettangolo</option>
+        <option value="2:'Triangolo'">Triangolo</option>
+      </select> <span>{{figuraDivisore}}</span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <button (click)="calcolare()">Calcola e visualizza area</button>
+    </td>
+  </tr>
+  @if (area !==0 ) {
+  <tr>
+    <td colspan="2"><label for="">Il totale dell'area della figura: {{figuraDivisore.split(':')[1]}} è: {{area}}</label>
+    </td>
+  </tr>
+  }
+
+</table>
+
+
+@for (animaleLetto of animali; track $index;let indice =$index) {
+<div style="background-color: aqua;">L'animale letto é: {{animaleLetto}} mi trovo nella posizione: {{indice}}</div>
+}
