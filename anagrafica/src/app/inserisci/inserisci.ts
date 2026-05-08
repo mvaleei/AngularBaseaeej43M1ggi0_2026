@@ -34,7 +34,8 @@ export class Inserisci {
       id: 0,
       nominativo: this.nominativo,
       annoNascita: this.annoNascita,
-      interno: this.interno === "s" ? true : false
+      interno: this.interno === "s" ? true : false,
+      stipendio: 2800
     }
 
     //nuovapersona.nominativo="Carlo"

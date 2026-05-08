@@ -6,9 +6,26 @@ import { Dettaglio } from '../dettaglio/dettaglio';
 
 import { Inserisci } from '../inserisci/inserisci';
 
+import { UpperCasePipe, LowerCasePipe, CurrencyPipe } from '@angular/common'
+
+import { Trasformare } from '../Share/cambia'
+
+import { contabilita } from '../Share/Ruolo';
+
+import { Verifica } from '../Share/Verifica';
+
 @Component({
   selector: 'app-listato',
-  imports: [Dettaglio, Inserisci],
+  imports: [
+    Dettaglio,
+    Inserisci,
+    UpperCasePipe,
+    LowerCasePipe,
+    CurrencyPipe,
+    Trasformare,
+    contabilita,
+    Verifica
+  ],
   templateUrl: './listato.html',
   styleUrl: './listato.css',
 })
@@ -19,19 +36,22 @@ export class Listato {
       id: 1,
       nominativo: "Mario Rossi",
       annoNascita: 2000,
-      interno: true
+      interno: true,
+      stipendio: 2500
     },
     {
       id: 2,
       nominativo: "Carlo Bianchi",
       annoNascita: 1990,
-      interno: false
+      interno: false,
+      stipendio: 1950
     },
     {
       id: 3,
       nominativo: "Stefano Gialli",
-      annoNascita: 1980,
-      interno: true
+      annoNascita: 2000,
+      interno: true,
+      stipendio: 4000
     }
   ]
 

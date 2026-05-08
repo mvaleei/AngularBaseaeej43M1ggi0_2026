@@ -16,7 +16,8 @@ export class Dettaglio {
     id: 0,
     nominativo: "",
     annoNascita: 99,
-    interno: true
+    interno: true,
+    stipendio:0
   }
 
   scegli(): void {

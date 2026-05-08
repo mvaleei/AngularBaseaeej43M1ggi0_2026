@@ -7,6 +7,31 @@
 
     <br><br>
 
+    <table border="2">
+        @for (people of peoples; track people.id) {
+        <tr>
+            <td>{{people.id}}</td>
+            <td>{{people.nominativo}}</td>
+            <td>{{people.annoNascita}}</td>
+            <td>{{people.interno}}</td>
+            <td>{{people.nominativo | uppercase}}</td>
+            <td>{{people.nominativo | lowercase}}</td>
+            <td>{{people.stipendio}}</td>
+            <td>{{people.stipendio | currency:"$."}}</td>
+            <td>{{people.nominativo | change:"M"}}</td>
+            <td>{{people.stipendio | ruoloAziendale | uppercase}}</td>
+            <td>{{people.stipendio | verifica:people.annoNascita:people.interno}}</td>
+        </tr>
+        }
+    </table>
+
+    @for (people of peoples; track people.id) {
+    <div>{{people.stipendio | verifica:people.annoNascita:people.interno}}</div>
+    }
+
+    <br><br><br>
+
+
     @for (people of peoples; track people.id) {
     <div>id:{{people.id}} <button>Visualizza anagrafica</button> - nome:{{people.nominativo}} - anno
         nascita:{{people.annoNascita}} -
