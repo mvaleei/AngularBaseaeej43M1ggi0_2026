@@ -1,0 +1,4 @@
+<div>Saldo carta: {{saldo}}</div>
+
+<app-prelevare [saldoFiglio]="saldo" (eventoInvia)="riceviSaldo($event)"></app-prelevare>
+<app-versare [saldoFiglio]="saldo" (eventoFiglio)="riceviSaldo($event)"></app-versare>

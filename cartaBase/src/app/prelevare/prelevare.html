@@ -1,0 +1,6 @@
+<div style="background-color: orange; width: 90%;">
+    <label for="">Importo da prelevare</label>
+    <input type="number" [(ngModel)]="importo"> <span>{{importo}}</span>
+    <button (click)="inviaSaldo()">Conferma prelievo</button>
+    <label for="">Saldo attuale: {{saldoFiglio}}</label>
+</div>
