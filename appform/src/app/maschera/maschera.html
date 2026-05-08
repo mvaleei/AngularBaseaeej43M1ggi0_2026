@@ -1,30 +1,41 @@
-<div style="background-color: darkkhaki; width:50%;">
+<div style="background-color: darkkhaki; width:70%;">
     <h2>Pagina per inserire i dati convalidati</h2>
     <br>
 
-    <form action="">
+    <form [formGroup]="contactForm" (submit)="registra()">
         <table border="2">
             <tr>
                 <td><label for="">Nome</label></td>
                 <td>
-                    <input type="text">
+                    <input type="text" formControlName="nome">
+                    @if (contactForm.controls['nome'].invalid) {
+                    <label style="background-color: red;">Attenzione il nome è obbligatorio</label>
+                    }
+
                 </td>
             </tr>
             <tr>
                 <td><label for="">Cognome</label></td>
                 <td>
-                    <input type="text">
+                    <input type="text" formControlName="cognome">
+                    @if (contactForm.controls['cognome'].invalid) {
+                    <label style="background-color: red;">Attenzione il cognome deve avere minimo 4 caratteri</label>
+                    }
                 </td>
             </tr>
             <tr>
                 <td><label for="">Anni</label></td>
                 <td>
-                    <input type="number">
+                    <input type="number" formControlName="anni">
+                    @if (contactForm.controls['anni'].invalid) {
+                    <label style="background-color: red;">Attenzione devi essere maggiorenne</label>
+                    }
+
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <button>Registra dati</button>
+                    <button type="submit" [disabled]="contactForm.invalid">Registra dati</button>
                 </td>
             </tr>
         </table>
