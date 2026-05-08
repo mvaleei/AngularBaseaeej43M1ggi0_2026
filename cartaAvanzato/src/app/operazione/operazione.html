@@ -1,0 +1,9 @@
+<div style="background-color: orange; width: 90%;">
+    <span>{{typeof(tipo)}}</span>
+    <label for="">Importo da {{tipo===0 ?"prelevare":"versare"}}</label>
+    <input type="number" [(ngModel)]="importo"> <span>{{importo}}</span>
+    <button (click)="inviaSaldo()">Conferma {{tipo===0 ?"prelievo":"versamento"}}</button>
+    @if (tipo ===0) {
+    <label for="">Saldo attuale: {{saldoFiglio}}</label>
+    }
+</div>

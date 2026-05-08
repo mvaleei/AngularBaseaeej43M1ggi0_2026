@@ -1,0 +1,13 @@
+<div>Saldo carta: {{saldo}}</div>
+
+
+<app-operazione [tipo]="0" [saldoFiglio]="saldo" (eventoInvia)="riceviSaldo($event)"></app-operazione>
+
+<app-operazione [tipo]="1" [saldoFiglio]="saldo" (eventoInvia)="riceviSaldo($event)"></app-operazione>
+
+
+<br><br>
+<div>Metodologia con array operation</div>
+@for (op of lista; track $index) {
+<app-operazione [tipo]="op.tipo" [saldoFiglio]="saldo" (eventoInvia)="riceviSaldo($event)"></app-operazione>
+}
