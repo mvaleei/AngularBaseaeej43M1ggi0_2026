@@ -1,0 +1,17 @@
+<div>
+    <div style="background-color: cadetblue; width: 20%;height: 400px;float: left;" align="center">
+        <ul>
+            @for (elemento of linkLetti; track $index) {
+            <li>
+                <a routerLink={{elemento.url}} style="background-color: orange;">{{elemento.dicitura}}</a>
+            </li>
+            }
+        </ul>
+
+    </div>
+
+    <div style="background-color: aquamarine; width: 80%;height: 400px;float: left; " align=center>
+        <router-outlet></router-outlet>
+
+    </div>
+</div>
