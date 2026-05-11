@@ -1,4 +1,20 @@
 <div style="background-color: orange;">
     <h2>Componente per la gestione dei servizi</h2>
     <h3>Numero di utenti letti dal servizio: {{listaUtenti.length}}</h3>
+
+    
+    <table>
+        @for (user of listaUtenti ; track $index) {
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+        }
+    </table>
+
+    <button (click)="carica()">Carica dati</button>
+
+
 </div>

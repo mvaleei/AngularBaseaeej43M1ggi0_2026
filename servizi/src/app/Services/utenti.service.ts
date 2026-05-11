@@ -23,10 +23,9 @@ export class UtentiService {
     private url = "https://jsonplaceholder.typicode.com/users"
 
 
-    getUtenti(): Observable<Array<Utente>> {
-        return this.Chiamata.get<Array<Utente>>(this.url);
+    getUtenti(): Observable<Utente[]> {
+        return this.Chiamata.get<Utente[]>(this.url);
     }
-
 
 
 }
