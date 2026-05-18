@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 
 import { Utente } from '../Interfacce/Utente';
 
 import { UtentiService } from '../Services/utenti.service';
-import { map } from 'rxjs';
 
 import { CommonModule } from '@angular/common'
+
+import { map, Observable, takeWhile } from 'rxjs';
 
 @Component({
   selector: 'app-consumo',
@@ -15,37 +16,24 @@ import { CommonModule } from '@angular/common'
   providers: [UtentiService],
   standalone: true
 })
-export class Consumo implements OnInit {
+export class Consumo {
+  listaUtenti = signal<Utente[]>([]);
 
   constructor(private _Utenti: UtentiService) { }
 
-  listaUtenti: Utente[] = [];
 
 
-  carica(): void {
+  carica() {
+
+    console.log(this._Utenti.getUtenti())
     this._Utenti.getUtenti().subscribe(
-      (dato) => {
-        this.listaUtenti = dato
+      {
+        next: (dato) => this.listaUtenti.set(dato),
+        error: (errore) => console.log(errore)
       }
-    );
-  }
 
-  ngOnInit() {
-
-    this._Utenti.getUtenti().pipe
-      (
-        map(
-          (ut: Array<Utente>) => {
-            return ut.filter(ut => ut.id > 5)
-          }
-        )
-      ).subscribe(
-        (utenteFiltrato: Array<Utente>) => {
-          this.listaUtenti = utenteFiltrato
-          console.log(utenteFiltrato);
-        }
-      )
-
+    )
 
   }
+
 }

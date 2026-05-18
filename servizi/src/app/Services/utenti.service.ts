@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, inject } from "@angular/core";
 
 import { HttpClient } from '@angular/common/http'
 
@@ -14,17 +14,16 @@ import { Observable } from "rxjs";
 )
 export class UtentiService {
 
-    constructor(
-        private Chiamata: HttpClient
-    ) { }
+    private readonly http = inject(HttpClient);
 
 
     //dichiaro l'url
-    private url = "https://jsonplaceholder.typicode.com/users"
+    private url = "http://jsonplaceholder.typicode.com/users"
 
 
-    getUtenti(): Observable<Utente[]> {
-        return this.Chiamata.get<Utente[]>(this.url);
+
+    getUtenti(): Observable<Array<Utente>> {
+        return this.http.get<Array<Utente>>(this.url);
     }
 
 
